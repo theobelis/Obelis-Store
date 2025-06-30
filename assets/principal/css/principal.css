@@ -1,0 +1,173 @@
+/* principal.js: aquí van los estilos personalizados para la tienda principal */
+
+.color-circle {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-right: 6px;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px #0002;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+.color-circle:hover {
+  border: 2px solid #262626;
+}
+
+.btn-comprar, .btn-carrito {
+  font-size: 1.1rem;
+  padding: 0.7em 1.2em;
+  border-radius: 8px;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 600;
+}
+.btn-comprar {
+  background: linear-gradient(90deg, #00e1ff 0%, #252525 100%);
+  color: #fff;
+}
+.btn-comprar:hover {
+  background: linear-gradient(90deg, #252525 0%, #00e1ff 100%);
+  color: #fff;
+}
+.btn-carrito {
+  background: #FFD700;
+  color: #252525;
+}
+.btn-carrito:hover {
+  background: #252525;
+  color: #FFD700;
+}
+
+/* Modal galería fija, detalles scroll */
+#modalProducto .modal-body .row {
+  height: 100%;
+  min-height: 350px;
+}
+#modalProductoGaleria {
+  position: sticky;
+  top: 0;
+  height: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#modalProducto .col-md-6:last-child {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+/* Mejoras de contraste para modo oscuro */
+body.dark-mode .btn-comprar {
+  background: linear-gradient(90deg, #00e1ff 0%, #252525 100%);
+  color: #fff;
+}
+body.dark-mode .btn-carrito {
+  background: #FFD700;
+  color: #252525;
+}
+body.dark-mode .btn-carrito:hover {
+  background: #252525;
+  color: #FFD700;
+}
+
+/* --- REPARAR MODAL: z-index y backdrop --- */
+#modalProducto.modal {
+  z-index: 2000 !important;
+}
+#modalProducto .modal-backdrop,
+.modal-backdrop {
+  z-index: 1999 !important;
+}
+#modalProducto .modal-content {
+  position: relative;
+  z-index: 2001 !important;
+  background: #181818;
+  color: #fff;
+}
+#modalProducto .modal-dialog {
+  z-index: 2001 !important;
+}
+#modalProducto .btn-close {
+  z-index: 2002 !important;
+}
+/* Forzar pointer-events para permitir interacción */
+#modalProducto .modal-content, #modalProducto .modal-dialog {
+  pointer-events: auto !important;
+}
+
+/* --- SELECTORES INTERACTIVOS --- */
+.color-circle.color-selected {
+  border: 2.5px solid #00e1ff;
+  box-shadow: 0 0 0 2px #00e1ff44;
+}
+.talla-badge.bg-primary {
+  border: 2px solid #00e1ff;
+}
+
+/* --- REVIEWS Y CALIFICACIÓN DE CLIENTES --- */
+#modalProductoReviews {
+  margin-top: 2rem;
+  background: #232323;
+  border-radius: 8px;
+  padding: 1.2rem 1rem 0.5rem 1rem;
+  color: #fff;
+  box-shadow: 0 2px 12px #0002;
+}
+#modalProductoReviews h5 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.review-item {
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.review-item:last-child {
+  border-bottom: none;
+}
+.review-stars {
+  color: #FFD700;
+  font-size: 1.1rem;
+}
+.review-user {
+  font-weight: bold;
+  margin-right: 8px;
+}
+.review-date {
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+/* --- PERSONALIZACIÓN DE CUENTA CLIENTE --- */
+#perfilClienteForm {
+  max-width: 420px;
+  margin: 2rem auto;
+  background: #232323;
+  border-radius: 10px;
+  padding: 2rem 2rem 1rem 2rem;
+  color: #fff;
+  box-shadow: 0 2px 12px #0002;
+}
+#perfilClienteForm input, #perfilClienteForm label {
+  color: #222;
+}
+#perfilClienteForm .form-label {
+  color: #fff;
+}
+#perfilClienteForm .form-control {
+  background: #fff;
+  color: #222;
+}
+#perfilClienteFotoPreview {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid #00e1ff;
+}

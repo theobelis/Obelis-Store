@@ -1,0 +1,141 @@
+/* Secciones de productos, moda, electrónica, joyería, destacados, etc. */
+.fashion_section {
+    width: 100%;
+    float: left;
+    padding: 60px 0px 150px;
+}
+.fashion_taital {
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+.fashion_section_2 { width: 100%; margin-top: 30px; }
+
+.box_main {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.shirt_text {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.price_text {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    margin: 0px;
+}
+
+.tshirt_img, .electronic_img, .jewellery_img {
+    width: 100%;
+    text-align: center;
+    margin: 50px 0px;
+    min-height: 293px;
+}
+
+.btn_main { width: 100%; display: flex; }
+.buy_bt { float: left; width: 100%; }
+.buy_bt a {
+    width: 100%;
+    font-size: 16px;
+    background-color: transparent;
+    text-align: right;
+    font-weight: bold;
+}
+.buy_bt a:hover {
+    background-color: transparent;
+}
+.seemore_bt { width: 100%; float: right; text-align: right; }
+.seemore_bt a {
+    width: 100%;
+    font-size: 16px;
+    background-color: transparent;
+    text-align: right;
+}
+.seemore_bt a:hover {
+    background-color: transparent;
+}
+
+/* Sliders de secciones */
+#main_slider a.carousel-control-next, #electronic_main_slider a.carousel-control-next, #jewellery_main_slider a.carousel-control-next {
+    right: 615px;
+    top: 105%;
+}
+#main_slider a.carousel-control-prev, #electronic_main_slider a.carousel-control-prev, #jewellery_main_slider a.carousel-control-prev {
+    left: 615px;
+    top: 105%;
+}
+#main_slider .carousel-control-next, #main_slider .carousel-control-prev,
+#electronic_main_slider .carousel-control-next, #electronic_main_slider .carousel-control-prev,
+#jewellery_main_slider .carousel-control-next, #jewellery_main_slider .carousel-control-prev {
+    width: 55px;
+    height: 55px;
+    opacity: 1;
+    font-size: 30px;
+}
+
+
+/* Loader */
+.loader_main { width: 100%; text-align: center; margin-top: 140px; }
+.loader {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 6s linear infinite;
+    margin: 0 auto;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Productos destacados: título fijo y zoom en imagen */
+.featured_section .shirt_text {
+    min-height: 48px;
+    max-height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+.img-zoom-container {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+.img-zoom {
+    max-width: 100%;
+    max-height: 180px;
+    transition: transform 0.4s cubic-bezier(.4,2,.3,1);
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.box_main.destacado:hover .img-zoom {
+    transform: scale(1.15);
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Elimino todos los colores, fondos y bordes para que Material Dashboard tome el control visual */

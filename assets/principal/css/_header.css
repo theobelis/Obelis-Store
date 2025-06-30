@@ -1,0 +1,141 @@
+/* Header, navegación, login, idioma, menús */
+.header_section_top {
+    width: 100%;
+    float: left;
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 3% 100%);
+    height: auto;
+    padding: 10px 0px;
+}
+
+.custom_menu {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.custom_menu ul {
+    margin: 0px 0px 0px 50px;
+    padding: 0px;
+    display: inline-block;
+}
+
+.custom_menu li {
+    float: left;
+    font-size: 16px;
+    padding: 6px 10px 0px 10px;
+}
+
+.logo_section { width: 100%; float: left; }
+.logo { width: 100%; float: left; text-align: center; padding: 30px 0px; }
+
+.header_section { width: 100%; margin: 30px 0px; display: flex; }
+.containt_main { display: flex; margin: 20px 0px; }
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav { padding-top: 15px; }
+    .sidenav a { font-size: 18px; }
+}
+
+.toggle_icon { cursor: pointer; order: 2; }
+.header_box { order: 2; display: flex; }
+
+.dropdown, .dropleft, .dropright, .dropup {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    margin-left: 30px;
+    order: 2;
+}
+
+.show>.btn-secondary.dropdown-toggle:focus { box-shadow: none; }
+
+.main { flex: 1; margin: 0px 30px; display: inline-block; order: 2; }
+
+.has-search .form-control { padding-left: 2.375rem; }
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.login_menu { display: flex; text-align: right; float: right; }
+.login_menu ul { margin: 0px; padding: 0px; }
+.login_menu li {
+    float: left;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-left: 10px;
+    padding-top: 4px;
+}
+
+.login_menu .dropdown-menu {
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    min-width: 200px;
+}
+.login_menu .dropdown-menu .dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+}
+.login_menu .dropdown-menu .dropdown-divider {
+    margin: 0.5rem 0;
+}
+.login_menu .dropdown-toggle::after {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+@media (max-width: 768px) {
+    .login_menu .dropdown-menu {
+        position: absolute;
+        right: 0;
+        left: auto;
+        width: 200px;
+    }
+}
+
+.lang_box {
+    display: flex;
+    float: right;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.nav-link { display: block; padding: .4rem 1rem; }
+
+a:hover { text-decoration: underline; }
+
+/* Elimino todos los colores, fondos y bordes para que Material Dashboard tome el control visual */
