@@ -11,5 +11,5 @@ Instalación de Phpmailer
 ```
     
 ## Credenciales de acceso
-- Email: peppecanto18@gmail.com
-- Clave: 280101
+- Email: ************@gmail.com
+- Clave: ******
