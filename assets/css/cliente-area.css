@@ -1,0 +1,312 @@
+Estilos base con Material Dashboard Dark Theme body {
+  background: linear-gradient(195deg, #42424a 0%, #191919 100%) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Variables de color personalizadas */
+:root {
+  --md-primary: #00e1ff;
+  --md-secondary: #1a73e8;
+  --md-background: #252525;
+  --md-card: linear-gradient(195deg, #42424a 0%, #191919 100%);
+  --md-gradient: linear-gradient(195deg, #42424a 0%, #191919 100%);
+  --md-text: rgba(255, 255, 255, 0.8);
+  --md-border: rgba(255, 255, 255, 0.1);
+  --btn-gradient: linear-gradient(195deg, #00e1ff 0%, #1a73e8 100%);
+  --btn-gradient-hover: linear-gradient(195deg, #00b3cc 0%, #1557b0 100%);
+}
+
+/* Textos y enlaces */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  color: var(--md-text) !important;
+}
+
+a,
+.nav-link {
+  color: var(--md-text) !important;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+.nav-link:hover {
+  color: var(--md-primary) !important;
+}
+
+.boton-banner-slide:hover {
+  color: #fff;
+}
+
+/* Cards y contenedores */
+.card {
+  background: var(--md-card) !important;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+  background: var(--md-gradient) !important;
+  border-radius: 0.75rem 0.75rem 0 0 !important;
+}
+
+/* Botones y gradientes */
+/* Estilos base para botones */
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Variante info/gradient */
+.btn-info,
+.bg-gradient-info,
+.btnAddcarrito.btn-info {
+  background: var(--btn-gradient) !important;
+  color: #000 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 225, 255, 0.1),
+    0 2px 4px -1px rgba(0, 225, 255, 0.06);
+}
+
+.btn-info:hover,
+.bg-gradient-info:hover,
+.btnAddcarrito.btn-info:hover {
+  background: var(--btn-gradient-hover) !important;
+  box-shadow: 0 6px 8px -1px rgba(0, 225, 255, 0.2),
+    0 4px 6px -1px rgba(0, 225, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Botón outline */
+.btn-outline-light {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  color: var(--md-text) !important;
+}
+
+.btn-outline-light:hover {
+  background: var(--btn-gradient) !important;
+  border-color: transparent !important;
+  color: #000 !important;
+}
+
+/* Corregir el hover del botón añadir al carrito */
+.btnAddcarrito.btn-info {
+  background: var(--md-primary) !important;
+  color: #000 !important;
+}
+
+.btnAddcarrito.btn-info:hover {
+  background: #00b3cc !important; /* Un tono más oscuro del color primario */
+  box-shadow: 0 6px 8px -1px rgba(0, 225, 255, 0.2),
+    0 4px 6px -1px rgba(0, 225, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* DataTables personalización */
+.dataTables_wrapper {
+  background: var(--md-card);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+table.dataTable {
+  border-collapse: separate !important;
+  border-spacing: 0;
+  margin: 1rem 0 !important;
+}
+
+table.dataTable thead th {
+  background: var(--md-gradient);
+  color: var(--md-text);
+  border-bottom: none;
+  padding: 12px 18px;
+}
+
+table.dataTable tbody td {
+  color: var(--md-text);
+  border: none;
+  padding: 12px 18px;
+}
+
+table.dataTable tbody tr {
+  background: transparent;
+  transition: background-color 0.3s ease;
+}
+
+table.dataTable tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Modales y dropdowns */
+.modal-content {
+  background: var(--md-card) !important;
+  border: 1px solid var(--md-border);
+  border-radius: 0.75rem;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--md-border);
+}
+
+.dropdown-menu {
+  background: var(--md-card) !important;
+  border: 1px solid var(--md-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dropdown-item {
+  color: var(--md-text) !important;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(0, 225, 255, 0.1) !important;
+  color: var(--md-primary) !important;
+}
+
+/* Inputs */
+.form-control,
+.form-select {
+  background-color: var(--md-card) !important;
+  color: var(--md-text) !important;
+  border: 1px solid var(--md-border);
+  border-radius: 0.5rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--md-card) !important;
+  border-color: var(--md-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 225, 255, 0.25);
+}
+
+/* Navbar */
+.navbar {
+  background: transparent !important;
+  border-radius: 0 0 0.75rem 0.75rem;
+  margin: 0 1rem 1rem 1rem;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--md-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-primary);
+  border-radius: 4px;
+}
+
+/* Cards de productos */
+.producto-card {
+  background: var(--md-card);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.2),
+    0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes específicos para Material Dashboard */
+.sidenav.bg-white {
+  background: var(--md-card) !important;
+}
+
+.sidenav .navbar-brand,
+.sidenav .nav-link {
+  color: var(--md-text) !important;
+}
+
+.sidenav .nav-link.active {
+  background: rgba(0, 225, 255, 0.1) !important;
+  color: var(--md-primary) !important;
+}
+
+.input-group-outline .form-label {
+  color: var(--md-text);
+  opacity: 0.8;
+}
+
+.input-group-outline.is-focused .form-label,
+.input-group-outline.is-filled .form-label {
+  transform: scale(0.85) translateY(-1rem) translateX(0.15rem);
+  color: var(--md-primary);
+}
+
+.input-group-outline .form-control {
+  border-color: var(--md-border) !important;
+}
+
+.input-group-outline.is-focused .form-control {
+  border-color: var(--md-primary) !important;
+}
+
+.icon-shape {
+  background: var(--md-gradient);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(195deg, var(--md-primary), #1a73e8) !important;
+}
+
+/* Ajustes para DataTables con Material Dashboard */
+.table thead th {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--md-text) !important;
+  opacity: 0.7;
+}
+
+.dataTables_info,
+.dataTables_length,
+.dataTables_filter {
+  color: var(--md-text) !important;
+}
+
+.page-item .page-link {
+  background: var(--md-card);
+  border-color: var(--md-border);
+  color: var(--md-text);
+}
+
+.page-item.active .page-link {
+  background: var(--md-primary);
+  border-color: var(--md-primary);
+}
+
+/* Ajustes responsive */
+@media (max-width: 767.98px) {
+  .sidenav {
+    background: var(--md-card) !important;
+    transform: translateX(-17.125rem);
+  }
+
+  .sidenav.show {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+}

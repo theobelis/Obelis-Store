@@ -1,0 +1,198 @@
+/*
+  producto-detalles.css
+  Estilos para detalles.php con los mismos colores y cajas de ancho máximo que el index
+*/
+:root {
+  --md-primary: #00e1ff;
+  --md-secondary: #1a73e8;
+  --md-background: #252525;
+  --md-card: linear-gradient(195deg, #42424a 0%, #191919 100%);
+  --md-gradient: linear-gradient(195deg, #42424a 0%, #191919 100%);
+  --md-text: rgba(255, 255, 255, 0.85);
+  --md-border: rgba(255, 255, 255, 0.1);
+}
+
+body,
+body.bg-gray-900 {
+  background: var(--md-background) !important;
+  color: var(--md-text) !important;
+  font-family: "Poppins", "Roboto", Arial, sans-serif;
+}
+
+.navbar.bg-gradient-dark {
+  background: linear-gradient(
+    90deg,
+    #252525 0%,
+    var(--md-primary) 100%
+  ) !important;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.navbar .navbar-brand span {
+  color: var(--md-primary) !important;
+  letter-spacing: 1px;
+}
+
+main .row {
+  background: var(--md-card);
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 32px 0 rgba(0, 225, 255, 0.08);
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-1 * ((100vw - 100%) / 2));
+  margin-right: calc(-1 * ((100vw - 100%) / 2));
+}
+
+.d-flex.gap-2 img[onclick] {
+  border: 2px solid transparent;
+  transition: border 0.2s, opacity 0.2s;
+}
+.d-flex.gap-2 img[onclick]:hover,
+.d-flex.gap-2 img[onclick]:focus {
+  border: 2px solid var(--md-primary);
+  opacity: 1 !important;
+}
+
+h1.fw-bold {
+  font-size: 2.2rem;
+  color: #fff;
+}
+.text-info {
+  color: var(--md-primary) !important;
+}
+.text-dark {
+  color: #fff !important;
+}
+.text-secondary {
+  color: #b0b0b0 !important;
+}
+
+.badge.bg-info {
+  background: var(--md-primary) !important;
+  color: #232946 !important;
+  font-weight: 600;
+  border-radius: 0.7rem;
+}
+
+.btn-info {
+  background: var(--md-primary) !important;
+  color: #232946 !important;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 225, 255, 0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.btn-info:hover {
+  background: #00b3cc !important;
+  color: #fff !important;
+}
+
+.btn-outline-info {
+  border-color: var(--md-primary) !important;
+  color: var(--md-primary) !important;
+  background: #fff !important;
+  font-weight: 600;
+}
+.btn-outline-info:hover {
+  background: var(--md-primary) !important;
+  color: #fff !important;
+}
+
+input[type="number"].form-control {
+  border-radius: 0.7rem;
+  border: 1.5px solid #e0e0e0;
+  font-size: 1.1rem;
+}
+
+.review-item {
+  background: #232946;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 225, 255, 0.04);
+}
+
+.review-item .fa-user-circle {
+  color: var(--md-primary);
+}
+
+.rating-select .stars {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+}
+.rating-select .stars input[type="radio"] {
+  display: none;
+}
+.rating-select .stars label {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #b0b0b0;
+  transition: color 0.2s;
+}
+.rating-select .stars label:hover,
+.rating-select .stars label:hover ~ label,
+.rating-select .stars input[type="radio"]:checked ~ label {
+  color: #ffc107;
+}
+
+.comment-form textarea.form-control {
+  border-radius: 1rem;
+  border: 1.5px solid #e0e0e0;
+  font-size: 1.1rem;
+  min-height: 100px;
+}
+
+.color-circle {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #00e1ff;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  box-shadow: 0 1px 4px #0002;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+.color-circle:hover {
+  border: 2.5px solid #fff;
+}
+.talla-badge {
+  border-radius: 0.7rem;
+  font-weight: 600;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  background: var(--md-primary) !important;
+  color: #232946 !important;
+  transition: background 0.2s, color 0.2s;
+}
+.talla-badge:hover {
+  background: #00b3cc !important;
+  color: #fff !important;
+}
+.text-danger.small {
+  font-size: 0.95em;
+  margin-top: 2px;
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+@media (max-width: 991.98px) {
+  main .row {
+    flex-direction: column;
+  }
+  .col-lg-5,
+  .col-lg-7 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  main .row {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

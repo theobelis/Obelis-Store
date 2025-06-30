@@ -1,0 +1,382 @@
+/* --- General Card & Image Styles --- */
+.card {
+  transition: all 0.3s ease;
+  border: none;
+  background: rgba(0, 0, 0, 0.6) !important;
+  /* Altura mínima para que las tarjetas sean consistentes, pero con flexibilidad */
+  min-height: 380px; /* Reducida para una tarjeta más pequeña */
+  height: 100%; /* Asegura que se estiren en una fila si es necesario */
+  border-radius: 0.5rem;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
+}
+
+.img-zoom-container {
+  width: 100%;
+  padding-top: 100%; /* Contenedor cuadrado (1:1) */
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  display: block;
+}
+
+.img-zoom-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.4, 2, 0.3, 1);
+  padding: 0;
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-icon {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  z-index: 5;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem; /* Padding aún más reducido para hacer la tarjeta más pequeña */
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 0.9rem; /* Título un poco más pequeño */
+  font-weight: 600;
+  margin-bottom: 0.3rem; /* Margen reducido */
+  color: #fff;
+  line-height: 1.3;
+  min-height: 2.4rem; /* Altura mínima ajustada para 2 líneas */
+  display: -webkit-box;
+  line-clamp: 2; /* Limita a 2 líneas */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-title a:hover {
+  color: #0dcaf0;
+}
+
+.rating {
+  color: #ccc; /* Estrellas grises por defecto */
+  margin: 4px 0; /* Margen reducido */
+  font-size: 0.75rem; /* Tamaño de fuente más pequeño para las estrellas */
+}
+
+/* Efecto hover en las estrellas de calificación */
+.rating .fas.fa-star:hover,
+.rating .fas.fa-star.active {
+  /* Las estrellas ya calificadas */
+  color: #ffc107; /* Amarillas al hacer hover o si están activas */
+  cursor: pointer;
+}
+/* Asegura que las estrellas ya calificadas siempre sean amarillas, y el hover cambie las grises */
+.rating .fas.fa-star.text-warning {
+  color: #ffc107 !important;
+}
+
+.precio {
+  font-size: 1rem; /* Precio un poco más pequeño */
+  font-weight: bold;
+  color: #17a2b8;
+  margin: 0.3rem 0; /* Margen reducido */
+}
+
+.product-buttons {
+  margin-top: auto;
+  display: flex;
+  gap: 0.3rem; /* Espacio entre los botones reducido */
+}
+
+.product-buttons .btn {
+  flex: 1;
+  padding: 0.3rem 0.5rem; /* Padding aún más pequeño para botones más compactos */
+  font-size: 0.75rem; /* Fuente aún más pequeña para los botones */
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  transition: all 0.3s ease;
+  line-height: 1;
+  text-wrap: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+/* Asegura que el texto "Ver detalles" se adapte y no se corte */
+.btn-detalles {
+  text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+  overflow: hidden; /* Oculta el texto que excede el ancho */
+  white-space: nowrap; /* Mantiene el texto en una sola línea */
+  min-width: 0; /* Permite que el botón se reduzca si es necesario */
+}
+
+.btn-carrito {
+  background-color: #0dcaf0;
+  color: #fff;
+  border: 1px solid #0dcaf0;
+}
+
+.btn-carrito:hover {
+  background-color: #0dadd8;
+  border-color: #0dadd8;
+}
+
+/* El texto "Ver Detalles" es clave aquí */
+.btn-detalles {
+  background-color: transparent;
+  color: #0dcaf0;
+  border: 1px solid #0dcaf0;
+}
+
+.btn-detalles:hover {
+  background-color: #0dcaf0;
+  color: #fff;
+}
+
+/* --- Carousel Specific Styles --- */
+.featured-products {
+  background: linear-gradient(90deg, #00bcd4 0%, #212121 100%) !important;
+  padding: 3rem 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+.featured-products .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: left;
+  margin-bottom: 1.2rem; /* Margen aún más reducido */
+  padding-left: 15px;
+}
+
+.section-title h2 {
+  color: #fff;
+  font-size: 1.6rem; /* Título principal aún más pequeño */
+  font-weight: 700;
+  margin-bottom: 0.2rem; /* Margen muy pequeño */
+}
+
+.section-title p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem; /* Subtítulo aún más pequeño */
+}
+
+.carousel {
+  position: relative;
+  padding: 0 50px;
+}
+
+.carousel-inner {
+  overflow: hidden;
+}
+
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+/* --- Carousel Controls --- */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 35px; /* Controles un poco más pequeños */
+  height: 35px; /* Controles un poco más pequeños */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  color: #fff;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 18px; /* Iconos de control más pequeños */
+  height: 18px; /* Iconos de control más pequeños */
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  background-size: contain;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 0.8;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1 !important;
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* --- Carousel Indicators --- */
+.carousel-indicators {
+  bottom: -30px; /* Posiciona más cerca del carrusel */
+  margin: 0;
+  gap: 6px; /* Espacio entre indicadores reducido */
+  justify-content: center;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 30px; /* Indicadores más pequeños */
+  height: 3px; /* Indicadores más delgados */
+  border-radius: 3px;
+  background-color: #17a2b8;
+  opacity: 0.3;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0;
+  border: none;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  width: 40px; /* Indicador activo más corto */
+  background-color: #17a2b8;
+}
+
+.carousel-indicators [data-bs-target]:hover {
+  opacity: 0.7;
+}
+
+/* --- Accessibility Improvements --- */
+.btn:focus-visible,
+.carousel-control-prev:focus-visible,
+.carousel-control-next:focus-visible {
+  outline: 3px solid #17a2b8;
+  outline-offset: 3px;
+  border-radius: inherit;
+}
+
+/* --- Responsive Adaptations --- */
+@media (max-width: 991.98px) {
+  /* Tabletas y dispositivos más grandes que móviles */
+  .carousel {
+    padding: 0 20px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    opacity: 0.7;
+  }
+
+  .section-title h2 {
+    font-size: 1.4rem; /* Título principal aún más pequeño en tablets */
+  }
+
+  .section-title p {
+    font-size: 0.85rem; /* Subtítulo aún más pequeño en tablets */
+  }
+
+  .card-body {
+    padding: 0.5rem; /* Padding aún más reducido para móviles/tablets */
+  }
+  .card-title {
+    font-size: 0.85rem;
+    min-height: 2.2rem;
+  }
+  .precio {
+    font-size: 0.95rem;
+  }
+  .rating {
+    font-size: 0.7rem;
+  }
+  .product-buttons .btn {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Móviles */
+  .carousel {
+    padding: 0 10px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+
+  .card {
+    margin-bottom: 0.8rem; /* Espacio entre tarjetas apiladas reducido */
+    min-height: 350px; /* Ajuste de altura para móviles */
+  }
+
+  .product-buttons {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .product-buttons .btn {
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .img-zoom-container {
+    padding-top: 75%; /* Proporción de la imagen para pantallas más pequeñas (relación 4:3) */
+  }
+
+  .card-title {
+    font-size: 0.85rem;
+    min-height: auto;
+  }
+
+  .precio {
+    font-size: 1rem;
+  }
+
+  .rating {
+    font-size: 0.75rem;
+  }
+}

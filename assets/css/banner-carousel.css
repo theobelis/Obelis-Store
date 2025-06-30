@@ -1,0 +1,79 @@
+.carousel-controls-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    padding: 0 20px;
+}
+
+.carousel-controls-container .carousel-control-prev,
+.carousel-controls-container .carousel-control-next {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.carousel-controls-container .carousel-control-prev:hover,
+.carousel-controls-container .carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+}
+
+/* Estilos para el botón de agregar al carrito en el carrusel */
+.btnAddCarrito {
+    background: var(--md-primary, #00e1ff) !important;
+    color: #000 !important;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: auto;
+    min-width: 140px;
+}
+
+.btnAddCarrito:hover {
+    background: #00b3cc !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+
+.btnAddCarrito i {
+    font-size: 0.9rem;
+}
+
+.carousel-controls-container .carousel-control-prev-icon,
+.carousel-controls-container .carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+}
+
+@media (max-width: 768px) {
+    .carousel-controls-container {
+        padding: 0 10px;
+    }
+    
+    .carousel-controls-container .carousel-control-prev,
+    .carousel-controls-container .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+}
